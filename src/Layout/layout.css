@@ -1,0 +1,35 @@
+.loading {
+    font-size: 24px;
+    margin-top: 20px;
+
+}
+
+.loading span {
+    display: inline-block;
+    animation: jump 0.5s alternate infinite;
+    animation-delay: calc(0.1s * var(--index));
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #c91e2f;
+    padding: 10px 20px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 25px;
+}

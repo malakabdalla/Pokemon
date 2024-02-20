@@ -1,28 +1,38 @@
-import React, { useState } from 'react';
-import PokemonDetails from '../PokemonDetails/pokemonDetails';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import "./pokemonSearch.css";
 
-function PokemonSearch() {
-  const [pokemonName, setPokemonName] = useState('');
+function PokemonSearchForm({ onSubmit }) {
+  const [pokemonName, setPokemonName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (pokemonName.trim()) {
-      setPokemonName(pokemonName.trim());
-    }
+    onSubmit(pokemonName.trim());
   };
 
   return (
-    <div>
+    <React.StrictMode>
       <form onSubmit={handleSubmit}>
-        <label>
-          Enter Pokemon Name:
-          <input type="text" value={pokemonName} onChange={(e) => setPokemonName(e.target.value)} />
-        </label>
-        <button type="submit">Submit</button>
+        <label className="label">Enter To Mine:</label>
+        <br></br>
+        <input
+          className="inputField"
+          placeholder="Pokemon Name"
+          id="item"
+          type="text"
+          value={pokemonName}
+          onChange={(e) => setPokemonName(e.target.value)}
+        />
+
+        <button type="submit" className="submit-btn">
+          Mine
+        </button>
       </form>
-      {pokemonName.trim() && <PokemonDetails pokemonName={pokemonName} />}
-    </div>
+    </React.StrictMode>
   );
 }
+PokemonSearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
-export default PokemonSearch;
+export default PokemonSearchForm;
