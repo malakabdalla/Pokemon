@@ -1,0 +1,41 @@
+.label {
+    font-size: 30px;
+}
+
+.inputField {
+    margin-top: 20px;
+
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border: 2px solid #c7a008;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #c7a008;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c7a008;
+    color: #fff;
+}
+
+.inputField {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    font-size: 30px;
+}
+
+.inputField:hover {
+    border-color: #dbca83;
+    background-color: #dfca77;
+}

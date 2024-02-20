@@ -1,0 +1,12 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #333;
+  color: hsl(200, 100%, 90%);
+  max-width: 560px;
+  padding: 1rem;
+  margin: 0 auto;
+}

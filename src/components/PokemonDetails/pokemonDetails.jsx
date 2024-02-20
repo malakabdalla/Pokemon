@@ -1,50 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+import "./pokemonDetails.css";
 
-function PokemonDetails({ pokemonName }) {
-  const [pokemonData, setPokemonData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Pokemon not found!');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setPokemonData(data);
-        setLoading(false);
-      })
-      .catch(error => {
-        console.error('Error fetching Pokemon:', error);
-        setLoading(false);
-      });
-  }, [pokemonName]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (!pokemonData) {
-    return <div>No pokemon yet, please submit a pokemon!</div>;
-  }
-
+function PokemonInfo({ pokemonData }) {
   return (
-    <div>
-      <h2>{pokemonData.name}</h2>
-      <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
+    <React.StrictMode>
       <div>
-        <strong>Abilities:</strong>
-        <ul>
-          {pokemonData.abilities.map((ability, index) => (
-            <li key={index}>{ability.ability.name}</li>
-          ))}
-        </ul>
+        <p className="pokemonName">{pokemonData.name}</p>
+        <img
+          className="pokemonPic"
+          src={pokemonData.sprites.front_default}
+          alt={pokemonData.name}
+        />
+        <div>
+          <p className="ability">Abilities:</p>
+          <ul className="pokemonList">
+            {pokemonData.abilities.map((ability, index) => (
+              <li className="listItem" key={index}>
+                {ability.ability.name}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </React.StrictMode>
   );
 }
 
-export default PokemonDetails;
+PokemonInfo.propTypes = {
+  pokemonData: PropTypes.object.isRequired,
+};
+
+export default PokemonInfo;
