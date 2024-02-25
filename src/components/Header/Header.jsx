@@ -2,7 +2,9 @@ import "./Header.css";
 export default function Header() {
   return (
     <>
-      <p className="header"> Welcome To Pokemon Mine </p>
+      <p className="header" role="heading">
+        Welcome To Pokemon Mine
+      </p>
     </>
   );
 }
