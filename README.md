@@ -18,4 +18,4 @@ at the moment the project does not have testing for all components so in the fut
 This website is deployed on Render:
 https://pokemon-onac.onrender.com/
 
-
+updated on: 26/02/2024
