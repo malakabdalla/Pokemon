@@ -1,3 +1,4 @@
+
 Project's Title: Pokemon
 
 Project Description:
@@ -17,4 +18,4 @@ at the moment the project does not have testing for all components so in the fut
 This website is deployed on Render:
 https://pokemon-onac.onrender.com/
 
-Last Updated on 26/02/2024
+
